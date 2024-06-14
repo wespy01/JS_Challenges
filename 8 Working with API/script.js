@@ -1,5 +1,9 @@
 const button = document.querySelector('button')
 const image = document.querySelectorAll('img')
+
+// -------------------------------------------------------Using fetch to interact with the API---------------------------------------------------------------------
+
+// --------------------------When there was only one image to be shown------------------------------------------------
 // const button = document.querySelectorAll('button')
 // const image = document.querySelector('img')
 
@@ -22,6 +26,7 @@ const image = document.querySelectorAll('img')
 //         })
 // })
 
+// --------------------------When multiple images were to be shown, forEach was used------------------------------------------------
 // image.forEach(image => {
 //     button.addEventListener('click', () => {
 //         fetch('https://dog.ceo/api/breeds/image/random')
@@ -34,7 +39,7 @@ const image = document.querySelectorAll('img')
 // })
 
 
-// // USING XHR REQUEST NOW 
+// ------------------------------------------------USING XHR REQUEST NOW----------------------------------------------------------- 
 
 
 
@@ -43,14 +48,14 @@ image.forEach(images => {
         const xhr = new XMLHttpRequest()
         // console.log(xhr);
 
-// addEventListener should be used isntead of onload
+// addEventListener should be used isntead of onload-------------------------------------------------------------------
 
         xhr.addEventListener('load', () => {
             const response = JSON.parse(xhr.response);
             images.src = response.message;
         })
 
-// Below onload code is also working but addeventlistener is preferred 
+// Below onload code is also working but addeventlistener is preferred------------------------------------------------
 
         // xhr.onload = () => {
         //     const respo = JSON.parse(xhr.response);
