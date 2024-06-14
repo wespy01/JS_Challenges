@@ -37,11 +37,13 @@ const image = document.querySelectorAll('img')
 // we use forEach with XML HTTP Request here_______________________________
 image.forEach(images => {
     button.addEventListener('click', () => {
+
         const xhr = new XMLHttpRequest()
         xhr.addEventListener('load', () => {
             const response = JSON.parse(xhr.response);
             images.src = response.message;
         })
+
         xhr.open('GET', 'https://dog.ceo/api/breeds/image/random')
         xhr.send()
     })
